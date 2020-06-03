@@ -56,7 +56,7 @@ architecture Behavioral of top is
 
 	if(sw_active = '1') then
 	
-	 	if((to_integer(unsigned(r_IN(14 downto 11)))+to_integer(unsigned(r_IN(9 downto 6)))+to_integer(unsigned(r_IN(4 downto 1))))/3>8) then
+	 	if( r_IN(14) = '1'   AND r_IN(9) = '0' AND r_IN(4) = '0') then
 			r_OUT<="1"&"11111"&"11111"&"11111";
 		else 
 			r_OUT<="0"&"00000"&"00000"&"00000";
